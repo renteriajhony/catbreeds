@@ -1,4 +1,4 @@
 //GENERATED BARREL FILE
-export 'domensions.dart';
+export 'dimensions.dart';
 export '../../theme_data.dart';
 

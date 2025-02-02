@@ -21,15 +21,22 @@ final ThemeData lightTheme = ThemeData(
     // Rojo para errores
     onError: Colors.white, // Texto sobre fondos de error
   ),
+  cardColor: Colors.white,
+  canvasColor: Colors.white,
   appBarTheme: AppBarTheme(
     backgroundColor: Color(0xFF2098F3),
     foregroundColor: Colors.white, // Texto en el AppBar
   ),
   textTheme: TextTheme(
-    bodyLarge: TextStyle(fontFamily: 'MyriadRoman', color: Colors.black), // Texto principal
-    bodyMedium: TextStyle(fontFamily: 'MyriadRoman', color: Colors.black87), // Texto secundario
-    bodySmall: TextStyle(fontFamily: 'MyriadRoman', color: Colors.black54), // Texto menos destacado
-    titleLarge: TextStyle(fontFamily: 'MyriadRoman', color: Colors.black), // Títulos destacados
+    bodyLarge: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.black), // Texto principal
+    bodyMedium: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.black87), // Texto secundario
+    bodySmall: TextStyle(
+        fontFamily: 'MyriadRoman',
+        color: Colors.black54), // Texto menos destacado
+    titleLarge: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.black), // Títulos destacados
   ),
 );
 
@@ -55,13 +62,20 @@ final ThemeData darkTheme = ThemeData(
     onError: Colors.white, // Texto sobre fondos de error
   ),
   appBarTheme: AppBarTheme(
-    backgroundColor: Color(0xFF55A4ED),
+    backgroundColor: Color(0xFF212625),
     foregroundColor: Colors.white, // Texto en el AppBar
   ),
+  cardColor: Color(0xFF292D2C),
+  canvasColor: Color(0xFF212625),
   textTheme: TextTheme(
-    bodyLarge: TextStyle(fontFamily: 'MyriadRoman', color: Colors.white), // Texto principal
-    bodyMedium: TextStyle(fontFamily: 'MyriadRoman', color: Colors.white70), // Texto secundario
-    bodySmall: TextStyle(fontFamily: 'MyriadRoman', color: Colors.white54), // Texto menos destacado
-    titleLarge: TextStyle(fontFamily: 'MyriadRoman', color: Colors.white),// Títulos destacados
+    bodyLarge: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.white), // Texto principal
+    bodyMedium: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.white70), // Texto secundario
+    bodySmall: TextStyle(
+        fontFamily: 'MyriadRoman',
+        color: Colors.white54), // Texto menos destacado
+    titleLarge: TextStyle(
+        fontFamily: 'MyriadRoman', color: Colors.white), // Títulos destacados
   ),
 );
