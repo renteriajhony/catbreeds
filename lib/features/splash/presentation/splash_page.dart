@@ -1,3 +1,4 @@
+import 'package:catbreeds/core/utils/tokens/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:async';
@@ -21,8 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _loadResourcesAndNavigate() async {
-    _opacity = 1.0;
-    await Future.delayed(Duration(milliseconds: 1500));
+    _opacity = DimensionsOpacity.one;
+    await Future.delayed(
+        Duration(milliseconds: DimensionsInt.oneThousandFiveHundred));
     if (mounted) {
       await dotenv.load(fileName: 'assets/.env');
       Navigator.of(context).pushReplacement(
@@ -38,22 +40,22 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
         child: AnimatedOpacity(
-          duration: Duration(milliseconds: 1000),
+          duration: Duration(milliseconds: DimensionsInt.thousand),
           opacity: _opacity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 200),
+              SizedBox(height: DimensionsDouble.twoHundred),
               Text(
                 localizations?.appName ?? '',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
               ),
-              SizedBox(height: 250),
+              SizedBox(height: DimensionsDouble.twoHundredFifty),
               Image.asset(
                 'assets/images/cat-lame.gif',
-                width: 150,
+                width: DimensionsDouble.oneHundredFifty,
               ),
             ],
           ),

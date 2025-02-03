@@ -43,9 +43,9 @@ class CatCard extends StatelessWidget {
                     ),
                   ),
                   FadeInRight(
-                    duration: Duration(seconds: 1),
-                    delay: Duration(milliseconds: 500),
-                    from: 20,
+                    duration: Duration(seconds: DimensionsInt.one),
+                    delay: Duration(milliseconds: DimensionsInt.fiveHundred),
+                    from: DimensionsDouble.twenty,
                     child: GestureDetector(
                       onTap: () => Navigator.push(
                         context,
@@ -69,8 +69,8 @@ class CatCard extends StatelessWidget {
             ),
             Container(
               constraints: BoxConstraints(
-                minHeight: 400,
-                maxHeight: 400,
+                minHeight: DimensionsDouble.fourHundred,
+                maxHeight: DimensionsDouble.fourHundred,
               ),
               padding: const EdgeInsets.symmetric(
                 horizontal: DimensionsDouble.fourteen,
@@ -79,15 +79,13 @@ class CatCard extends StatelessWidget {
                 tag: "cat-${cat.referenceImageId}",
                 child: CachedNetworkImage(
                   fit: BoxFit.cover,
-                  // width: double.infinity,
-                  // height: double.infinity,
                   imageUrl: '$imageCatBaseUrl${cat.referenceImageId}.jpg',
                   progressIndicatorBuilder: (_, child, loadingProgress) {
                     return Center(
                       child: Image.asset(
                         'assets/images/cat-lame.gif',
                         width: double.infinity,
-                        height: 50,
+                        height: DimensionsDouble.fifty,
                       ),
                     );
                   },

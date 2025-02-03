@@ -43,7 +43,7 @@ class CatDetailPage extends StatelessWidget {
                   child: Image.asset(
                     'assets/images/cat-lame.gif',
                     width: double.infinity,
-                    height: 50,
+                    height: DimensionsDouble.fifty,
                   ),
                 );
               },
@@ -54,7 +54,7 @@ class CatDetailPage extends StatelessWidget {
                     Image.asset(
                       'assets/images/cat-not-like.png',
                       width: double.infinity,
-                      height: 200,
+                      height: DimensionsDouble.twoHundred,
                     ),
                     Text(
                       localizations?.appNotImage ?? '',

@@ -1,6 +1,6 @@
+import 'package:catbreeds/core/utils/tokens/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/utils/tokens/tokens.dart';
 import '../../../../core/widgets/not_resource.dart';
 import '../../../../generated/l10n.dart';
 import '../provider/cat_provider.dart';
@@ -17,7 +17,6 @@ class CatListPage extends ConsumerStatefulWidget {
 class _CatListPageState extends ConsumerState<CatListPage> {
   String searchQuery = '';
   late FocusNode _focusNode;
-  // late final AppLocalizations? localizations;
 
   @override
   void initState() {
@@ -48,7 +47,7 @@ class _CatListPageState extends ConsumerState<CatListPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
               child: CustomSearchBar(
                 onSearch: _onSearch,
                 focusNode: _focusNode,
@@ -72,7 +71,7 @@ class _CatListPageState extends ConsumerState<CatListPage> {
                   child: Image.asset(
                     'assets/images/cat-louder.gif',
                     width: double.infinity,
-                    height: 80,
+                    height: DimensionsDouble.eighty,
                   ),
                 ),
                 error: (error, _) => Center(
