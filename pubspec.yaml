@@ -41,6 +41,7 @@ dependencies:
   cached_network_image: ^3.4.1
   animate_do: ^3.3.4
   flutter_dotenv: ^5.2.1
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_test:
@@ -67,8 +68,16 @@ flutter:
   assets:
     - assets/images/
     - assets/fonts/
+    - assets/icon/
     - assets/.env
   fonts:
     - family: MyriadRoman
       fonts:
         - asset: assets/fonts/Myriad-Roman.ttf
+        
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/logo.png"  # Ruta de tu icono
+  adaptive_icon_background: "#ffffff" # Opcional para Android
+  # adaptive_icon_foreground: "assets/icon/app_icon_foreground.png" # Opcional
