@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../../../core/utils/tokens/tokens.dart';
+import '../../../../generated/l10n.dart';
 import '../../domain/entities/cat.dart';
 
 class CatDetailPage extends StatelessWidget {
@@ -13,6 +14,7 @@ class CatDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations? localizations = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -55,7 +57,7 @@ class CatDetailPage extends StatelessWidget {
                       height: 200,
                     ),
                     Text(
-                      'Sin Imagen',
+                      localizations?.appNotImage ?? '',
                       style: TextStyle(
                         fontSize: DimensionsDouble.twentyFive,
                       ),
@@ -71,7 +73,7 @@ class CatDetailPage extends StatelessWidget {
               children: [
                 RichText(
                   text: TextSpan(
-                    text: 'Descripción: ',
+                    text: localizations?.catDetailPageLabelDescription ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
@@ -85,7 +87,7 @@ class CatDetailPage extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: 'Nombre del pais: ',
+                    text: localizations?.catDetailPageLabelCountry ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
@@ -99,7 +101,7 @@ class CatDetailPage extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: 'Inteligencia: ',
+                    text: localizations?.catDetailPageLabelIntelligence ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
@@ -113,13 +115,13 @@ class CatDetailPage extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: 'Adaptabilidad: ',
+                    text: localizations?.catDetailPageLabelAdaptability ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
                     children: [
                       TextSpan(
-                        text: '${cat.intelligence}',
+                        text: '${cat.adaptability}',
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
@@ -127,13 +129,13 @@ class CatDetailPage extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: 'Tiempo de vida: ',
+                    text: localizations?.catDetailPageLabelLifeSpan ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
                     children: [
                       TextSpan(
-                        text: '${cat.lifeSpan} años',
+                        text: '${cat.lifeSpan} ${(localizations?.years ?? '')}',
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
@@ -141,7 +143,7 @@ class CatDetailPage extends StatelessWidget {
                 ),
                 RichText(
                   text: TextSpan(
-                    text: 'Raza: ',
+                    text: localizations?.catDetailPageLabelBreed ?? '',
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),

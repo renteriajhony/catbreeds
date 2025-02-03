@@ -30,9 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
   shared_preferences: ^2.5.1
@@ -62,6 +62,7 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  generate: true
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -74,10 +75,10 @@ flutter:
     - family: MyriadRoman
       fonts:
         - asset: assets/fonts/Myriad-Roman.ttf
-        
+
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/logo.png"  # Ruta de tu icono
+  image_path: "assets/icon/logo.png" # Ruta de tu icono
   adaptive_icon_background: "#ffffff" # Opcional para Android
   # adaptive_icon_foreground: "assets/icon/app_icon_foreground.png" # Opcional

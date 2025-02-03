@@ -4,6 +4,7 @@ import 'package:catbreeds/core/utils/tokens/dimensions.dart';
 import 'package:catbreeds/features/cats/presentation/pages/cat_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import '../../../../generated/l10n.dart';
 import '../../domain/entities/cat.dart';
 
 class CatCard extends StatelessWidget {
@@ -14,6 +15,7 @@ class CatCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations? localizations = AppLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(
           horizontal: DimensionsDouble.fourteen,
@@ -53,7 +55,7 @@ class CatCard extends StatelessWidget {
                         ),
                       ),
                       child: Text(
-                        'Mas...',
+                        localizations?.cardLabelLink ?? '',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               color: Theme.of(context).colorScheme.secondary,
                               fontWeight: FontWeight.w500,
@@ -98,7 +100,7 @@ class CatCard extends StatelessWidget {
                         height: 200,
                       ),
                       Text(
-                        'Sin Imagen',
+                        localizations?.appNotImage ?? '',
                         style: TextStyle(
                           fontSize: DimensionsDouble.twentyFive,
                         ),
@@ -121,7 +123,7 @@ class CatCard extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   Text(
-                    'Inteligencia: ${cat.intelligence}',
+                    '${localizations?.cardLabelIntelligence ?? ''}${cat.intelligence}',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:async';
 
+import '../../../generated/l10n.dart';
 import '../../cats/presentation/pages/cat_list_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -32,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: Center(
@@ -43,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               SizedBox(height: 200),
               Text(
-                "catbreeds",
+                localizations?.appName ?? '',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),

@@ -1,0 +1,15 @@
+{
+  "appName": "Catbreeds",
+  "appNotImage": "Sin Imagen",
+  "searchLabel": "Buscar...",
+  "cardLabelLink": "Más...",
+  "years": "Años",
+  "cardLabelIntelligence": "Inteligencia: ",
+  "catListPageErrorLoadDataLabel": "Error al cargar los gatos: ",
+  "catDetailPageLabelDescription": "Descripción: ",
+  "catDetailPageLabelCountry": "Nombre del pais: ",
+  "catDetailPageLabelIntelligence": "Inteligencia: ",
+  "catDetailPageLabelAdaptability": "Adaptabilidad: ",
+  "catDetailPageLabelLifeSpan": "Tiempo de vida: ",
+  "catDetailPageLabelBreed": "Raza: "
+}

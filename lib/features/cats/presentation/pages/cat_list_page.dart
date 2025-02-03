@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../generated/l10n.dart';
 import '../provider/cat_provider.dart';
 import '../widgets/cat_card.dart';
 import '../widgets/custom_search_bar.dart';
@@ -14,6 +15,7 @@ class CatListPage extends ConsumerStatefulWidget {
 class _CatListPageState extends ConsumerState<CatListPage> {
   String searchQuery = '';
   late FocusNode _focusNode;
+  // late final AppLocalizations? localizations;
 
   @override
   void initState() {
@@ -29,13 +31,14 @@ class _CatListPageState extends ConsumerState<CatListPage> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context);
     final catList = searchQuery.isEmpty
         ? ref.watch(catProvider)
         : ref.watch(catFilterProvider(searchQuery));
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catbreeds'),
+        title: Text(localizations?.appName ?? ''),
         centerTitle: true,
       ),
       body: SizedBox(
@@ -62,8 +65,11 @@ class _CatListPageState extends ConsumerState<CatListPage> {
                     height: 80,
                   ),
                 ),
-                error: (error, _) =>
-                    Center(child: Text('Error al cargar los gatos')),
+                error: (error, _) => Center(
+                  child: Text(
+                    localizations?.catListPageErrorLoadDataLabel ?? '',
+                  ),
+                ),
               ),
             ),
           ],
