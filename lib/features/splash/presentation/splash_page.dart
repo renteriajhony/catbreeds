@@ -7,11 +7,13 @@ import '../../../generated/l10n.dart';
 import '../../cats/presentation/pages/cat_list_page.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreenState extends State<SplashScreen> {
   double _opacity = 0.0;
 
   @override
@@ -27,9 +29,11 @@ class _SplashScreenState extends State<SplashScreen> {
         Duration(milliseconds: DimensionsInt.oneThousandFiveHundred));
     if (mounted) {
       await dotenv.load(fileName: 'assets/.env');
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => CatListPage()),
-      );
+      if (context.mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => CatListPage()),
+        );
+      }
     }
   }
 

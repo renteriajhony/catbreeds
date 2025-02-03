@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import '../utils/tokens/tokens.dart';
 
 class NotResource extends StatelessWidget {
-  NotResource({
+  const NotResource({
     super.key,
     required this.label,
     this.textStyle,
   });
-  String label;
-  TextStyle? textStyle;
+  final String label;
+  final TextStyle? textStyle;
   @override
   Widget build(BuildContext context) {
     return Column(

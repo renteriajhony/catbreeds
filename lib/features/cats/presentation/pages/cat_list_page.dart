@@ -11,10 +11,10 @@ class CatListPage extends ConsumerStatefulWidget {
   const CatListPage({super.key});
 
   @override
-  _CatListPageState createState() => _CatListPageState();
+  CatListPageState createState() => CatListPageState();
 }
 
-class _CatListPageState extends ConsumerState<CatListPage> {
+class CatListPageState extends ConsumerState<CatListPage> {
   String searchQuery = '';
   late FocusNode _focusNode;
 
@@ -47,7 +47,8 @@ class _CatListPageState extends ConsumerState<CatListPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
+              padding:
+                  const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
               child: CustomSearchBar(
                 onSearch: _onSearch,
                 focusNode: _focusNode,
