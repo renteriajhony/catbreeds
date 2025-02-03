@@ -1,12 +1,11 @@
+import 'package:catbreeds/features/splash/presentation/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
-import 'features/cats/presentation/pages/cat_list_page.dart';
 import 'core/theme_data.dart';
 
-Future<void> main() async {
-  await dotenv.load(fileName: 'assets/.env');
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Asegura la inicialización rápida
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: CatListPage(),
+      home: SplashScreen(), // La pantalla de splash precarga la HomePage
     );
   }
 }
