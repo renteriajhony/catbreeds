@@ -1,10 +1,9 @@
-import 'package:catbreeds/features/cats/domain/usecases/get_cats_filter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/cats/data/datasources/cat_remote_data_source.dart';
-import 'features/cats/data/repositories/cat_repository_impl.dart';
-import 'features/cats/domain/usecases/get_cats.dart';
+import 'features/cats/cats.dart';
+
+
 
 
 final dioProvider = Provider((ref) => Dio());

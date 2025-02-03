@@ -1,11 +1,8 @@
-import 'package:catbreeds/core/utils/tokens/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../../core/widgets/not_resource.dart';
-import '../../../../generated/l10n.dart';
-import '../provider/cat_provider.dart';
-import '../widgets/cat_card.dart';
-import '../widgets/custom_search_bar.dart';
+
+import '../../../../lib.dart';
+
 
 class CatListPage extends ConsumerStatefulWidget {
   const CatListPage({super.key});

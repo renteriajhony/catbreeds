@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/errors/failures.dart';
-import '../entities/cat.dart';
+
+import '../../../../lib.dart';
+
 
 
 abstract class CatRepository {

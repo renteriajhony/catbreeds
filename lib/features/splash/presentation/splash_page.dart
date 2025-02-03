@@ -1,10 +1,10 @@
-import 'package:catbreeds/core/utils/tokens/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:async';
 
-import '../../../generated/l10n.dart';
-import '../../cats/presentation/pages/cat_list_page.dart';
+import '../../../lib.dart';
+
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

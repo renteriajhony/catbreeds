@@ -1,12 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:catbreeds/core/utils/tokens/dimensions.dart';
-import 'package:catbreeds/features/cats/presentation/pages/cat_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import '../../../../core/widgets/not_resource.dart';
-import '../../../../generated/l10n.dart';
-import '../../domain/entities/cat.dart';
+
+import '../../../../lib.dart';
+
 
 class CatCard extends StatelessWidget {
   CatCard({super.key, required this.cat});

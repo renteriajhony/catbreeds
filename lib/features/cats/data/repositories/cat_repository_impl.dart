@@ -1,8 +1,7 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/errors/failures.dart';
-import '../../domain/entities/cat.dart';
-import '../../domain/repositories/cat_repository.dart';
-import '../datasources/cat_remote_data_source.dart';
+
+import '../../../../lib.dart';
+
 
 class CatRepositoryImpl implements CatRepository {
   final CatRemoteDataSource remoteDataSource;

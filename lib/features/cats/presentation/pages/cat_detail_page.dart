@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import '../../../../core/utils/tokens/tokens.dart';
-import '../../../../generated/l10n.dart';
-import '../../domain/entities/cat.dart';
+import '../../../../lib.dart';
+
+
 
 class CatDetailPage extends StatelessWidget {
   CatDetailPage({super.key, required this.cat});

@@ -1,9 +1,9 @@
-import 'package:catbreeds/features/splash/presentation/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'generated/l10n.dart';
 
-import 'core/theme_data.dart';
+import 'lib.dart';
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Asegura la inicialización rápida
