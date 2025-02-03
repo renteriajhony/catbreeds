@@ -4,7 +4,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../../../lib.dart';
 
-
 /// \[CatDetailPage\] Página de detalles del gato.
 ///
 /// Esta página muestra información detallada sobre un gato específico,
@@ -38,37 +37,40 @@ class CatDetailPage extends StatelessWidget {
         children: [
           Hero(
             tag: "cat-${cat.referenceImageId}",
-            child: CachedNetworkImage(
-              fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height * 0.45,
-              // height: double.infinity,
-              imageUrl:
-                  '$imageCatBaseUrl${cat.referenceImageId}.jpg',
-              progressIndicatorBuilder: (_, child, loadingProgress) {
-                return Center(
-                  child: Image.asset(
-                    'assets/images/cat-lame.gif',
-                    width: double.infinity,
-                    height: DimensionsDouble.fifty,
-                  ),
-                );
-              },
-              errorWidget: (context, error, stackTrace) => Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/cat-not-like.png',
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: DimensionsDouble.twenty,
+              ),
+              child: CachedNetworkImage(
+                fit: BoxFit.cover,
+                height: MediaQuery.of(context).size.height * 0.45,
+                imageUrl: '$imageCatBaseUrl${cat.referenceImageId}.jpg',
+                progressIndicatorBuilder: (_, child, loadingProgress) {
+                  return Center(
+                    child: Image.asset(
+                      'assets/images/cat-lame.gif',
                       width: double.infinity,
-                      height: DimensionsDouble.twoHundred,
+                      height: DimensionsDouble.fifty,
                     ),
-                    Text(
-                      localizations?.appNotImage ?? '',
-                      style: TextStyle(
-                        fontSize: DimensionsDouble.twentyFive,
+                  );
+                },
+                errorWidget: (context, error, stackTrace) => Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/images/cat-not-like.png',
+                        width: double.infinity,
+                        height: DimensionsDouble.twoHundred,
                       ),
-                    ),
-                  ],
+                      Text(
+                        localizations?.appNotImage ?? '',
+                        style: TextStyle(
+                          fontSize: DimensionsDouble.twentyFive,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
