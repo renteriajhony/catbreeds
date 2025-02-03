@@ -1,11 +1,16 @@
-/// [CatListPage] Pagina principal: Muestra listado de gatos y presenta filtro de busqueda
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../lib.dart';
 
-
+/// \[CatListPage\] Página de lista de gatos.
+///
+/// Esta página muestra una lista de gatos, permitiendo buscar gatos
+/// específicos mediante un campo de búsqueda.
+///
+/// \[searchQuery\]: Cadena de búsqueda para filtrar los gatos.
+/// \[_focusNode\]: Nodo de enfoque para el campo de búsqueda.
 class CatListPage extends ConsumerStatefulWidget {
   const CatListPage({super.key});
 
@@ -13,6 +18,10 @@ class CatListPage extends ConsumerStatefulWidget {
   CatListPageState createState() => CatListPageState();
 }
 
+/// \[CatListPageState\] Estado de la página de lista de gatos.
+///
+/// Esta clase maneja el estado de la página, incluyendo la lógica
+/// para buscar gatos y actualizar la lista mostrada.
 class CatListPageState extends ConsumerState<CatListPage> {
   String searchQuery = '';
   late FocusNode _focusNode;
@@ -47,7 +56,7 @@ class CatListPageState extends ConsumerState<CatListPage> {
           children: [
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
+              const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
               child: CustomSearchBar(
                 onSearch: _onSearch,
                 focusNode: _focusNode,
@@ -58,14 +67,14 @@ class CatListPageState extends ConsumerState<CatListPage> {
                 data: (cats) {
                   return cats.isEmpty
                       ? NotResource(
-                          label: localizations?.appNotResult ?? '',
-                          textStyle: Theme.of(context).textTheme.displaySmall,
-                        )
+                    label: localizations?.appNotResult ?? '',
+                    textStyle: Theme.of(context).textTheme.displaySmall,
+                  )
                       : ListView.builder(
-                          itemCount: cats.length,
-                          itemBuilder: (context, index) =>
-                              CatCard(cat: cats[index]),
-                        );
+                    itemCount: cats.length,
+                    itemBuilder: (context, index) =>
+                        CatCard(cat: cats[index]),
+                  );
                 },
                 loading: () => Center(
                   child: Image.asset(

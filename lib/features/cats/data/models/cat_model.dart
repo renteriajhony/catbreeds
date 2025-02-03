@@ -1,8 +1,50 @@
 import 'package:catbreeds/features/cats/data/models/weight_model.dart';
-
 import '../../domain/entities/cat.dart';
 
+/// \[CatModel\] Modelo de datos que representa un gato.
+///
+/// Este modelo extiende la entidad \[Cat\] y proporciona métodos para
+/// la serialización y deserialización de datos JSON.
 class CatModel extends Cat {
+  /// Constructor de \[CatModel\].
+  ///
+  /// \[id\]: Identificador único del gato.
+  /// \[name\]: Nombre del gato.
+  /// \[weight\]: Peso del gato.
+  /// \[cfaUrl\]: URL de la CFA.
+  /// \[vetstreetUrl\]: URL de Vetstreet.
+  /// \[vcahospitalsUrl\]: URL de VCA Hospitals.
+  /// \[temperament\]: Temperamento del gato.
+  /// \[origin\]: Origen del gato.
+  /// \[countryCodes\]: Códigos de país del gato.
+  /// \[countryCode\]: Código de país del gato.
+  /// \[description\]: Descripción del gato.
+  /// \[lifeSpan\]: Esperanza de vida del gato.
+  /// \[indoor\]: Indicador de si el gato es de interior.
+  /// \[lap\]: Indicador de si el gato es de regazo.
+  /// \[altNames\]: Nombres alternativos del gato.
+  /// \[adaptability\]: Nivel de adaptabilidad del gato.
+  /// \[affectionLevel\]: Nivel de afecto del gato.
+  /// \[childFriendly\]: Nivel de amistad con niños.
+  /// \[dogFriendly\]: Nivel de amistad con perros.
+  /// \[energyLevel\]: Nivel de energía del gato.
+  /// \[grooming\]: Nivel de necesidad de aseo.
+  /// \[healthIssues\]: Problemas de salud del gato.
+  /// \[intelligence\]: Nivel de inteligencia del gato.
+  /// \[sheddingLevel\]: Nivel de muda del gato.
+  /// \[socialNeeds\]: Necesidades sociales del gato.
+  /// \[strangerFriendly\]: Nivel de amistad con extraños.
+  /// \[vocalisation\]: Nivel de vocalización del gato.
+  /// \[experimental\]: Indicador de si el gato es experimental.
+  /// \[hairless\]: Indicador de si el gato es sin pelo.
+  /// \[natural\]: Indicador de si el gato es natural.
+  /// \[rare\]: Indicador de si el gato es raro.
+  /// \[rex\]: Indicador de si el gato es rex.
+  /// \[suppressedTail\]: Indicador de si el gato tiene cola suprimida.
+  /// \[shortLegs\]: Indicador de si el gato tiene patas cortas.
+  /// \[wikipediaUrl\]: URL de Wikipedia del gato.
+  /// \[hypoallergenic\]: Indicador de si el gato es hipoalergénico.
+  /// \[referenceImageId\]: Identificador de imagen de referencia.
   CatModel({
     required super.id,
     required super.name,

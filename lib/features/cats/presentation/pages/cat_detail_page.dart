@@ -1,5 +1,3 @@
-/// [CatDetailPage] Muestra detalle del gato seleccionado.
-
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -7,7 +5,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../../../lib.dart';
 
 
-
+/// \[CatDetailPage\] Página de detalles del gato.
+///
+/// Esta página muestra información detallada sobre un gato específico,
+/// incluyendo su imagen, descripción, origen, inteligencia, adaptabilidad,
+/// esperanza de vida y raza.
+///
+/// \[cat\]: Instancia de la clase \[Cat\] que contiene los datos del gato.
 class CatDetailPage extends StatelessWidget {
   CatDetailPage({super.key, required this.cat});
 

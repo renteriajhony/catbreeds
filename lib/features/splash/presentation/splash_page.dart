@@ -1,6 +1,3 @@
-/// [SplashScreen] Pagina de carga de la app.
-///Aqui dargamos recursos y datos necesarios para el buen funcionamiento de la app.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:async';
@@ -8,7 +5,13 @@ import 'dart:async';
 import '../../../lib.dart';
 
 
-
+/// \[SplashScreen\] Página de pantalla de carga.
+///
+/// Esta página muestra una animación de opacidad mientras se cargan los recursos
+/// necesarios y luego navega a la página de lista de gatos.
+///
+/// \[_opacity\]: Nivel de opacidad de la animación.
+/// \[_loadResourcesAndNavigate\]: Método que carga los recursos y navega a la siguiente página.
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -16,6 +19,10 @@ class SplashScreen extends StatefulWidget {
   SplashScreenState createState() => SplashScreenState();
 }
 
+/// \[SplashScreenState\] Estado de la página de pantalla de carga.
+///
+/// Esta clase maneja el estado de la página, incluyendo la lógica
+/// para cargar los recursos y navegar a la siguiente página.
 class SplashScreenState extends State<SplashScreen> {
   double _opacity = 0.0;
 

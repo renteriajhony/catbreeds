@@ -1,4 +1,3 @@
-/// [CatCard] Widget que presenta los datos basicos de un gato.
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +5,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../../../lib.dart';
 
-
+/// \[CatCard\] Widget que muestra una tarjeta con información de un gato.
+///
+/// Este widget presenta una tarjeta que incluye el nombre del gato,
+/// su imagen, origen e inteligencia. Al hacer clic en el nombre del gato,
+/// se navega a la página de detalles del gato.
+///
+/// \[cat\]: Instancia de la clase \[Cat\] que contiene los datos del gato.
 class CatCard extends StatelessWidget {
   CatCard({super.key, required this.cat});
 

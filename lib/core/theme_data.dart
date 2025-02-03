@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 
-///[ThemeData:lightTheme] Tema claro de la aplicacion.
+/// \[ThemeData:lightTheme\] Tema claro de la aplicación.
+///
+/// Este tema define los colores y estilos utilizados en la interfaz de usuario
+/// cuando la aplicación está en modo claro.
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  primaryColor: Color(0xFF2098F3),
-  // Azul brillante
+  primaryColor: Color(0xFF2098F3), // Azul brillante
   colorScheme: ColorScheme.light(
-    primary: Color(0xFF2098F3),
-    // Azul brillante
-    secondary: Color(0xFFF39C20),
-    // Naranja cálido
-    surface: Color(0xFFF8F5F5),
-    // Fondo claro (superficie)
-    onPrimary: Colors.white,
-    // Texto sobre colores primarios
-    onSecondary: Colors.black,
-    // Texto sobre colores secundarios
-    onSurface: Colors.black,
-    // Texto sobre superficies claras
-    error: Color(0xFFFF5252),
-    // Rojo para errores
+    primary: Color(0xFF2098F3), // Azul brillante
+    secondary: Color(0xFFF39C20), // Naranja cálido
+    surface: Color(0xFFF8F5F5), // Fondo claro (superficie)
+    onPrimary: Colors.white, // Texto sobre colores primarios
+    onSecondary: Colors.black, // Texto sobre colores secundarios
+    onSurface: Colors.black, // Texto sobre superficies claras
+    error: Color(0xFFFF5252), // Rojo para errores
     onError: Colors.white, // Texto sobre fondos de error
   ),
   cardColor: Colors.white,
@@ -34,33 +29,27 @@ final ThemeData lightTheme = ThemeData(
     bodyMedium: TextStyle(
         fontFamily: 'MyriadRoman', color: Colors.black87), // Texto secundario
     bodySmall: TextStyle(
-        fontFamily: 'MyriadRoman',
-        color: Colors.black54), // Texto menos destacado
+        fontFamily: 'MyriadRoman', color: Colors.black54), // Texto menos destacado
     titleLarge: TextStyle(
         fontFamily: 'MyriadRoman', color: Colors.black), // Títulos destacados
   ),
 );
 
-///[ThemeData:darkTheme] Tema oscuro de la aplicacion.
+/// \[ThemeData:darkTheme\] Tema oscuro de la aplicación.
+///
+/// Este tema define los colores y estilos utilizados en la interfaz de usuario
+/// cuando la aplicación está en modo oscuro.
 final ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  primaryColor: Color(0xFF212625),
-  // Verde oliva
+  primaryColor: Color(0xFF212625), // Verde oliva
   colorScheme: ColorScheme.dark(
-    primary: Color(0xFF212625),
-    // Verde oliva
-    secondary: Color(0xFF2BA2AD),
-    // Amarillo vibrante
-    surface: Color(0xFF1E1E1E),
-    // Superficie oscura
-    onPrimary: Colors.white,
-    // Texto sobre colores primarios
-    onSecondary: Colors.black,
-    // Texto sobre colores secundarios
-    onSurface: Colors.white,
-    // Texto sobre superficies oscuras
-    error: Color(0xFFFF5252),
-    // Rojo para errores
+    primary: Color(0xFF212625), // Verde oliva
+    secondary: Color(0xFF2BA2AD), // Amarillo vibrante
+    surface: Color(0xFF1E1E1E), // Superficie oscura
+    onPrimary: Colors.white, // Texto sobre colores primarios
+    onSecondary: Colors.black, // Texto sobre colores secundarios
+    onSurface: Colors.white, // Texto sobre superficies oscuras
+    error: Color(0xFFFF5252), // Rojo para errores
     onError: Colors.white, // Texto sobre fondos de error
   ),
   appBarTheme: AppBarTheme(
@@ -75,8 +64,7 @@ final ThemeData darkTheme = ThemeData(
     bodyMedium: TextStyle(
         fontFamily: 'MyriadRoman', color: Colors.white70), // Texto secundario
     bodySmall: TextStyle(
-        fontFamily: 'MyriadRoman',
-        color: Colors.white54), // Texto menos destacado
+        fontFamily: 'MyriadRoman', color: Colors.white54), // Texto menos destacado
     titleLarge: TextStyle(
         fontFamily: 'MyriadRoman', color: Colors.white), // Títulos destacados
   ),

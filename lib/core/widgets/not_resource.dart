@@ -1,9 +1,16 @@
-///[NotResource] Widget que representa la aucenca de algu recurso, solicitud de datos, imagenes.
-import 'package:flutter/material.dart';
+/// Constructor de \[NotResource\].
+///
+/// \[label\]: Texto que se mostrará.
+/// \[textStyle\]: Estilo opcional para el texto.
 
+import 'package:flutter/material.dart';
 import '../utils/tokens/tokens.dart';
 
 class NotResource extends StatelessWidget {
+  /// Constructor de \[NotResource\].
+  ///
+  /// \[label\]: Texto que se mostrará.
+  /// \[textStyle\]: Estilo opcional para el texto.
   const NotResource({
     super.key,
     required this.label,
