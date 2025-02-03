@@ -1,14 +1,20 @@
+
+
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../../../core/errors/exceptions.dart';
 import '../models/cat_model.dart';
 
+/// [CatRemoteDataSource] Representacion de llamado de datos del modulo cat
 abstract class CatRemoteDataSource {
+  /// Consumo de api, para traer todos los gatos
   Future<List<CatModel>> getCats();
+  /// COnsumo de api para traer los gatos segun filtro de busqueda
   Future<List<CatModel>> getCatsFilter(String filter);
 }
 
+/// [CatRemoteDataSourceImpl] Implementacion del llamado de datos del modulo cat.
 class CatRemoteDataSourceImpl implements CatRemoteDataSource {
   CatRemoteDataSourceImpl({required this.dio});
   final Dio dio;

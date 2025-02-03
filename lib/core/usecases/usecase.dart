@@ -1,3 +1,4 @@
+/// Representacion del llamado de casos de uso
 import 'package:dartz/dartz.dart';
 import '../errors/failures.dart';
 

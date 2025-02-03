@@ -1,3 +1,5 @@
+/// [CatListPage] Pagina principal: Muestra listado de gatos y presenta filtro de busqueda
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

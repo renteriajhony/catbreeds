@@ -1,3 +1,6 @@
+/// [SplashScreen] Pagina de carga de la app.
+///Aqui dargamos recursos y datos necesarios para el buen funcionamiento de la app.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'dart:async';

@@ -1,3 +1,4 @@
+/// [CatCard] Widget que presenta barra de busqueda.
 import 'package:catbreeds/core/utils/tokens/tokens.dart';
 import 'package:flutter/material.dart';
 

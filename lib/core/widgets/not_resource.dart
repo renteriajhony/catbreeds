@@ -1,3 +1,4 @@
+///[NotResource] Widget que representa la aucenca de algu recurso, solicitud de datos, imagenes.
 import 'package:flutter/material.dart';
 
 import '../utils/tokens/tokens.dart';

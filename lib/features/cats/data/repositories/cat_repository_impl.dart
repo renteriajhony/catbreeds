@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../lib.dart';
 
-
+/// [CatRepositoryImpl] Implementacion del repositorio del modulo cat.
 class CatRepositoryImpl implements CatRepository {
   final CatRemoteDataSource remoteDataSource;
 
