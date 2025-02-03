@@ -5,4 +5,5 @@ import '../entities/cat.dart';
 
 abstract class CatRepository {
   Future<Either<Failure, List<Cat>>> getCats();
+  Future<Either<Failure, List<Cat>>> getCatsFilter(String filter);
 }

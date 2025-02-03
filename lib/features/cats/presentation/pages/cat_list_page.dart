@@ -1,17 +1,37 @@
-import 'package:catbreeds/core/utils/tokens/tokens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../provider/cat_provider.dart';
 import '../widgets/cat_card.dart';
 import '../widgets/custom_search_bar.dart';
 
-class CatListPage extends ConsumerWidget {
+class CatListPage extends ConsumerStatefulWidget {
   const CatListPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final catkList = ref.watch(catProvider);
+  _CatListPageState createState() => _CatListPageState();
+}
+
+class _CatListPageState extends ConsumerState<CatListPage> {
+  String searchQuery = '';
+  late FocusNode _focusNode;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final catList = searchQuery.isEmpty
+        ? ref.watch(catProvider)
+        : ref.watch(catFilterProvider(searchQuery));
 
     return Scaffold(
       appBar: AppBar(
@@ -23,20 +43,18 @@ class CatListPage extends ConsumerWidget {
         child: Column(
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: DimensionsDouble.ten),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: CustomSearchBar(
-                  // mainProvider: mainProvider,
-                  ),
+                onSearch: _onSearch,
+                focusNode: _focusNode,
+              ),
             ),
             Expanded(
-              child: catkList.when(
-                data: (cats) {
-                  return ListView.builder(
-                    itemCount: cats.length,
-                    itemBuilder: (context, index) => CatCard(cat: cats[index]),
-                  );
-                },
+              child: catList.when(
+                data: (cats) => ListView.builder(
+                  itemCount: cats.length,
+                  itemBuilder: (context, index) => CatCard(cat: cats[index]),
+                ),
                 loading: () => Center(
                   child: Image.asset(
                     'assets/images/cat-louder.gif',
@@ -45,12 +63,20 @@ class CatListPage extends ConsumerWidget {
                   ),
                 ),
                 error: (error, _) =>
-                    Center(child: Text('Error al cargar los catos')),
+                    Center(child: Text('Error al cargar los gatos')),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void _onSearch(String filter) {
+    FocusScope.of(context).unfocus();
+    _focusNode.unfocus();
+    setState(() {
+      searchQuery = filter;
+    });
   }
 }

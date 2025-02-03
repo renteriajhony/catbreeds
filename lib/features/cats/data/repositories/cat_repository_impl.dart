@@ -18,4 +18,14 @@ class CatRepositoryImpl implements CatRepository {
       return Left(ServerFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, List<Cat>>> getCatsFilter(String filter) async {
+    try {
+      final cats = await remoteDataSource.getCatsFilter(filter);
+      return Right(cats);
+    } catch (e) {
+      return Left(ServerFailure());
+    }
+  }
 }

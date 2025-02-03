@@ -1,3 +1,4 @@
+import 'package:catbreeds/features/cats/domain/usecases/get_cats_filter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -19,4 +20,8 @@ final catRepositoryProvider = Provider(
 
 final getCatsUseCaseProvider = Provider(
       (ref) => GetCats(ref.read(catRepositoryProvider)),
+);
+
+final getCatsFilterUseCaseProvider = Provider(
+      (ref) => GetCatsFIlter(ref.read(catRepositoryProvider)),
 );

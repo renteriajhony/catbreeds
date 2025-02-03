@@ -8,3 +8,10 @@ final catProvider = FutureProvider<List<Cat>>((ref) async {
   final result = await getCats(NoParams());
   return result.fold((failure) => [], (cats) => cats);
 });
+
+final catFilterProvider =
+    FutureProvider.autoDispose.family<List<Cat>, String>((ref, query) async {
+  final getCatsFIlter = ref.watch(getCatsFilterUseCaseProvider);
+  final result = await getCatsFIlter(query);
+  return result.fold((failure) => [], (cats) => cats);
+});

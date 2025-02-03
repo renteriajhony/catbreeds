@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'features/cats/presentation/pages/cat_list_page.dart';
 import 'core/theme_data.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: 'assets/.env');
   runApp(const ProviderScope(child: MyApp()));
 }
 

@@ -3,12 +3,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:catbreeds/core/utils/tokens/dimensions.dart';
 import 'package:catbreeds/features/cats/presentation/pages/cat_detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import '../../domain/entities/cat.dart';
 
 class CatCard extends StatelessWidget {
-  const CatCard({super.key, required this.cat});
+  CatCard({super.key, required this.cat});
 
   final Cat cat;
+  final String imageCatBaseUrl = dotenv.get('CAT_IMAGE_BASE_URL');
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class CatCard extends StatelessWidget {
                       tag: "cat-${cat.id}",
                       child: Text(
                         cat.name,
-                        style: TextStyle(color:Theme.of(context).colorScheme.onPrimary),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
                   ),
@@ -52,11 +54,10 @@ class CatCard extends StatelessWidget {
                       ),
                       child: Text(
                         'Mas...',
-                        style: TextStyle(
-                            color: Colors.blue,
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.w500,
-                            fontSize: DimensionsDouble.sixteen),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
                     ),
                   ),
@@ -77,8 +78,7 @@ class CatCard extends StatelessWidget {
                   fit: BoxFit.cover,
                   // width: double.infinity,
                   // height: double.infinity,
-                  imageUrl:
-                      'https://cdn2.thecatapi.com/images/${cat.referenceImageId}.jpg',
+                  imageUrl: '$imageCatBaseUrl${cat.referenceImageId}.jpg',
                   progressIndicatorBuilder: (_, child, loadingProgress) {
                     return Center(
                       child: Image.asset(
@@ -115,7 +115,16 @@ class CatCard extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text(cat.origin ?? ''), Text('${cat.intelligence}')],
+                children: [
+                  Text(
+                    cat.origin ?? '',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  Text(
+                    'Inteligencia: ${cat.intelligence}',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ],
               ),
             ),
           ],
