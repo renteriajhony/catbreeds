@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../../core/utils/tokens/tokens.dart';
+import '../../../../core/widgets/not_resource.dart';
 import '../../../../generated/l10n.dart';
 import '../provider/cat_provider.dart';
 import '../widgets/cat_card.dart';
@@ -54,10 +56,18 @@ class _CatListPageState extends ConsumerState<CatListPage> {
             ),
             Expanded(
               child: catList.when(
-                data: (cats) => ListView.builder(
-                  itemCount: cats.length,
-                  itemBuilder: (context, index) => CatCard(cat: cats[index]),
-                ),
+                data: (cats) {
+                  return cats.isEmpty
+                      ? NotResource(
+                          label: localizations?.appNotResult ?? '',
+                          textStyle: Theme.of(context).textTheme.displaySmall,
+                        )
+                      : ListView.builder(
+                          itemCount: cats.length,
+                          itemBuilder: (context, index) =>
+                              CatCard(cat: cats[index]),
+                        );
+                },
                 loading: () => Center(
                   child: Image.asset(
                     'assets/images/cat-louder.gif',

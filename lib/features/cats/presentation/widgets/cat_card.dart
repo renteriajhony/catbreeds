@@ -4,6 +4,7 @@ import 'package:catbreeds/core/utils/tokens/dimensions.dart';
 import 'package:catbreeds/features/cats/presentation/pages/cat_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import '../../../../core/widgets/not_resource.dart';
 import '../../../../generated/l10n.dart';
 import '../../domain/entities/cat.dart';
 
@@ -91,22 +92,11 @@ class CatCard extends StatelessWidget {
                     );
                   },
                   errorWidget: (context, error, stackTrace) => Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/cat-not-like.png',
-                        width: double.infinity,
-                        height: 200,
-                      ),
-                      Text(
-                        localizations?.appNotImage ?? '',
-                        style: TextStyle(
-                          fontSize: DimensionsDouble.twentyFive,
-                        ),
-                      ),
-                    ],
-                  )),
+                    child: NotResource(
+                      label: localizations?.appNotImage ?? '',
+                      textStyle: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                  ),
                 ),
               ),
             ),

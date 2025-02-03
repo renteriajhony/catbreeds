@@ -107,6 +107,12 @@ abstract class AppLocalizations {
   /// **'Sin Imagen'**
   String get appNotImage;
 
+  /// No description provided for @appNotResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Sin Resultados'**
+  String get appNotResult;
+
   /// No description provided for @searchLabel.
   ///
   /// In en, this message translates to:

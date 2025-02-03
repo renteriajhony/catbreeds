@@ -1,6 +1,7 @@
 {
   "appName": "Catbreeds",
   "appNotImage": "Sin Imagen",
+  "appNotResult": "Sin Resultados",
   "searchLabel": "Buscar...",
   "cardLabelLink": "Más...",
   "years": "Años",

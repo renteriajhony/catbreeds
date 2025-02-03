@@ -13,6 +13,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appNotImage => 'Sin Imagen';
 
   @override
+  String get appNotResult => 'Sin Resultados';
+
+  @override
   String get searchLabel => 'Buscar...';
 
   @override

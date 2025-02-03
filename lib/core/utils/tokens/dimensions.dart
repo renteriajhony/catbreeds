@@ -1,4 +1,3 @@
-
 ///[DimensionsInt] Contiene las dimenciones de tipo (int) que utilizan los widgets.
 class DimensionsInt {
   static const int one = 1;
@@ -20,6 +19,7 @@ class DimensionsDouble {
   static const double forty = 40.0;
   static const double fifty = 50.0;
   static const double sixty = 60.0;
+  static const double twoHundred = 200.0;
 }
 
 ///[DimensionsOpacity] Contiene las valores de opaciodad (double) que utilizan los widgets.
