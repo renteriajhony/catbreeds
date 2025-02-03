@@ -83,11 +83,9 @@ Catbreeds es una aplicación que permite buscar y listar gatos, mostrando inform
 ## Instalación
 Clona el repositorio:
 git clone https://github.com/renteriajhony/catbreeds.git
-Navega al directorio del proyecto:
-cd catbreeds
-Instala las dependencias:
-```dart flutter pub get```
-Configura las variables de entorno en assets/.env.
-Ejecución
+* Navega al directorio del proyecto: ```bash cd catbreeds```
+* Instala las dependencias: ```dart flutter pub get```
+* Configura las variables de entorno en `assets/.env.`
+## Ejecución
 Para ejecutar la aplicación en un dispositivo o emulador, usa el siguiente comando:
 ```dart flutter run```
